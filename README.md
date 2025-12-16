@@ -33,6 +33,7 @@ The MCP servers in this demo highlight how each tool can light up widgets by com
 
 - `src/` – Source for each widget example.
 - `assets/` – Generated HTML, JS, and CSS bundles after running the build step.
+- `shopping_cart_python/` – Python MCP server that demonstrates how `_meta["widgetSessionId"]` keeps `widgetState` in sync across turns for a shopping-cart widget.
 - `pizzaz_server_node/` – MCP server implemented with the official TypeScript SDK.
 - `pizzaz_server_python/` – Python MCP server that returns the Pizzaz widgets.
 - `solar-system_server_python/` – Python MCP server for the 3D solar system widget.
@@ -104,6 +105,7 @@ The repository ships several demo MCP servers that highlight different widget bu
 - **Pizzaz (Node & Python)** – pizza-inspired collection of tools and components
 - **Solar system (Python)** – 3D solar system viewer
 - **Kitchen sink lite (Node & Python)** – minimal widget + server pairing that demonstrates tool output, widget state, `callTool`, and host helpers
+- **Shopping cart (Python)** – simple shopping cart widget that demonstrates how to use `widgetSessionId` to keep state between tool calls
 
 ### Pizzaz Node server
 
@@ -144,6 +146,22 @@ source .venv/bin/activate
 pip install -r kitchen_sink_server_python/requirements.txt
 uvicorn kitchen_sink_server_python.main:app --port 8000
 ```
+
+### Shopping cart Python server
+
+Use this example to learn how `_meta["widgetSessionId"]` can carry `widgetState` between tool calls so the model and widget share the same shopping cart. The widget merges tool responses with prior `widgetState`, and UI actions (like incrementing quantities) feed back into that shared state so the assistant always sees the latest cart.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r shopping_cart_python/requirements.txt
+uvicorn shopping_cart_python.main:app --port 8000
+```
+
+> [!NOTE]
+> In production you should persist the cart server-side (see [shopping_cart_python/README.md](shopping_cart_python/README.md)), but this demo shows the mechanics of keeping state through `widgetSessionId`.
+
+---
 
 You can reuse the same virtual environment for all Python servers—install the dependencies once and run whichever entry point you need.
 
