@@ -111,11 +111,9 @@ The repository ships several demo MCP servers that highlight different widget bu
 
 - **Pizzaz (Node & Python)** – pizza-inspired collection of tools and components
 - **Solar system (Python)** – 3D solar system viewer
-  <<<<<<< HEAD
-- # **Authenticated (Python)** – set of tools that require different levels of OAuth
+- **Authenticated (Python)** – set of tools that require different levels of OAuth
 - **Kitchen sink lite (Node & Python)** – minimal widget + server pairing that demonstrates tool output, widget state, `callTool`, and host helpers
 - **Shopping cart (Python)** – simple shopping cart widget that demonstrates how to use `widgetSessionId` to keep state between tool calls
-  > > > > > > > 1243be83efb820fcc288f7359bb67446e14b74ec
 
 ### Pizzaz Node server
 
