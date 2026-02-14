@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm run build",
+  "builds": [
+    {
+      "src": "pizzaz_server_python/main.py",
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": [
+          "assets/**"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "pizzaz_server_python/main.py"
+    }
+  ]
+}

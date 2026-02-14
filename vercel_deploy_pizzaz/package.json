@@ -1,0 +1,7 @@
+{
+  "name": "openai-apps-pizzaz",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "pnpm --dir .. install --frozen-lockfile && pnpm --dir .. run build && rm -rf assets pizzaz_server_python && cp -R ../assets ./assets && cp -R ../pizzaz_server_python ./pizzaz_server_python"
+  }
+}

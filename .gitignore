@@ -4,6 +4,7 @@ node_modules/
 
 # Build outputs
 /assets
+/deploy_pizzaz/assets
 dist/
 build/
 .vite/
@@ -36,3 +37,5 @@ __pycache__/
 
 # Ruff
 .ruff_cache/
+.vercel
+.env*.local
